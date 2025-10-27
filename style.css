@@ -1,0 +1,716 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.back-to-home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 2px;
+    z-index: 1000; 
+    padding: 10px 15px;
+    background-color: white;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.back-to-home-button:hover {
+    background-color: yellow;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@font-face {
+  font-family: 'Inter Italic';
+  src: url('./fonts/Inter-Italic-VariableFont_opsz_wght.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Josefine Sans';
+  src: url('./fonts/JosefinSans-Italic-VariableFont_wght.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'K2D bold';
+  src: url('./fonts/K2D-Bold.woff') format('woff');
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+}
+
+@keyframes slideInFromButtom {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 10px yellow;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.entrance-animation {
+    animation-name: slideInFromLeft;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.slide-animation {
+    animation-name: slideInFromButtom;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+    background-color: yellow;
+  color: black;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+header {
+    font-family: 'Inter Italic';
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    margin-bottom: 40px;
+    margin-top: 25px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    color: black;
+}
+
+nav ul li a {
+    margin-left: 25px;
+    background-color: white;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;    
+    border-radius: 52px;
+}
+
+nav ul a {
+    font-weight: 600;
+    padding: 5px;
+}
+
+.yellow-box {
+    display: inline-block; 
+    width: 180px;
+    height: 40px;
+    margin: 0 60px;
+    background-color: yellow;
+    clip-path: polygon(0% 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+.yellow-box:hover {
+    background-color: white;
+}
+
+.yellow-box p {
+    font-family: 'K2D bold';
+    font-size: 12px;
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.home-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+
+.home-text h1 {
+    font-family: 'Josefine Sans';
+    font-size: 5em;
+}
+
+.home-text .subtitle {
+    margin-top: 0px;
+    color: yellow;
+    font-size: 2.25em;
+    margin-bottom: 30px;
+    text-indent: 0;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+.home-text p {
+    font-family: 'K2D bold';
+    font-size: 1.75em;
+    line-height: 2.20;
+    text-align: justify;
+    text-indent: 3em;
+    margin-bottom: 15px;
+}
+
+.highlight-yellow {
+    color: yellow;
+}
+
+.home-image {
+    max-width: 100%;
+    height: auto;
+    flex-basis: 50%;
+    text-align: right;
+}
+
+.about-content {
+    border-bottom: 2px solid white;
+}
+
+.about-section {
+    padding: 10px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-family: 'Josefine Sans';
+    font-size: 3em;
+    text-align: center;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.about-images {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-top: -50px;
+}
+
+.about-images img {
+    width: 10%;
+    height: 100%;
+}
+
+.about-content p {
+    font-family: 'K2D bold';
+    font-size: 1.75em;
+    line-height: 2.20;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 3em;
+}
+
+.projects-section {
+    padding: 10px;
+}
+
+.project-content {
+    border-bottom: 2px solid white;    
+}
+
+.project-content h2 {
+    font-family: 'Josefine Sans';
+    font-size: 3em;
+    display: flex;
+    margin-left: 15%;
+    padding: 10px;
+}
+
+.project-content p {
+    font-family: 'K2D bold';
+    font-size: 1.75em;
+    line-height: 2.20;
+    margin-bottom: 20px;
+    text-align: center;
+    align-items: start;
+}
+
+.project-image {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-right: 90px;
+}
+
+.text-and-image {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; 
+}
+
+.project-image img {
+    width: 135%;
+    height: 100%;
+    border-radius: 20% 13% 13% 20%;
+    margin-right: -35%;
+}
+
+.skills-section {
+    padding: 10px;
+}
+
+.skills-section h2 {
+    font-family: 'Josefine Sans';
+    font-size: 3em;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+
+.skills-content h3 {
+    font-family: 'Josefine Sans';
+    font-size: 2em;
+}
+
+.skills-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 15%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 2%;
+}
+
+.skill {
+    border-bottom: 2px solid white;
+}
+
+.hard-skills .brain-icon {
+    font-size: 2.75em;
+    margin-bottom: 5px;
+    margin-left: -15%;
+    text-align: center;
+}
+
+.soft-skills .mind-icon {
+    font-size: 2.75em;
+    margin-bottom: 5px;
+    margin-left: 0%;
+    text-align: center;
+}
+
+.hard-skills h3 {
+    margin-left: 20%;
+}
+
+.hard-skills ul li {
+    font-family: 'Josefine Sans';
+    font-size: 2em;
+    list-style: none;
+    margin-left: -15%;
+    line-height: 2;
+}
+
+.highlight-aquablue {
+    color:aqua;
+    font-weight: bold;
+}
+
+.highlight-red {
+    color: red;
+    font-weight: bold;
+}
+
+.highlight-lightgreen {
+    color: rgb(0, 255, 0);
+    font-weight: bold;
+}
+
+.highlight-white {
+    color: white;
+    font-weight: bold;
+}
+
+.soft-skills h3 {
+    margin-left: 20%;
+}
+
+.soft-skills ul li {
+    font-family: 'Josefine Sans';
+    font-size: 2em;
+    list-style: none;
+    margin-left: -15%;
+    line-height: 2;
+    font-weight: bold;
+}
+
+.work-experience-section {
+    padding: 10px;
+}
+
+.work-experience {
+    border-bottom: 2px solid white;
+}
+
+.work-experience h2 {
+    font-family: 'Josefine Sans';
+    font-size: 3em;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.workexperience-item {
+    margin-bottom: 25px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+
+.job-title {
+    font-family: 'K2D bold';
+    color: yellow;
+    font-size: 2em;
+    margin: 0;
+    position: relative;
+    padding-left: 15px;
+    display: inline;
+}
+
+.job-period {
+    font-family: 'Josefine Sans';
+    color: white;
+    font-size: 2em;
+    font-weight: normal;
+    white-space: nowrap;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.job-institution {
+    font-family: 'Josefine Sans';
+    color: white;
+    font-size: 2em;
+    margin: 0 0 10px 15px;
+    font-weight: normal;
+}
+
+.job-description {
+    font-family: 'K2D bold';
+    color: white;
+    font-size: 1.5em;
+    line-height: 2.25;
+    margin-left: 15px;
+}
+
+.design-examples-section {
+    padding: 40px 20px;
+    position: relative;
+    font-family: 'Josefine Sans';
+}
+
+.design-examples {
+    display: block;
+    border-bottom: 2px solid white;
+}
+
+.design-examples-section h2 {
+    font-family: 'Josefine Sans';
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.design-logos {
+    position: absolute; 
+    top: 2%;
+    right: 18%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.design-examples .design-logos img:nth-child(1) {
+    width: 150px;
+    height: 100px;
+}
+
+.design-logos img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.design-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.design-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.design-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.design-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.design-title {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.design-gallery-container .design-card:nth-child(4) {
+    grid-column: 1 / 2;
+    margin-top: -320px;
+}
+
+.design-gallery-container .design-card:nth-child(5) {
+    height: 400px;
+    grid-column: 2 / 2;
+    margin-top: -309px;
+}
+
+.contact-section {
+    font-family: 'Josefine Sans';
+}
+
+.contact-section h2 {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    border-bottom: 2px solid white;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form-wrapper {
+    flex: 1.5;
+    min-width: 350px;
+}
+
+.send-message-title {
+    color: yellow;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.message-box {
+    background-color: rgb(51, 51, 51);
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 10%;
+}
+
+.message-box p {
+    font-size: 1,25em;
+    line-height: 2;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.message-box p:nth-child(1){
+    text-align: center;
+}
+
+.message-box p:nth-child(2){
+    text-indent: 2em;
+}
+
+.message-box p:nth-child(3){
+    text-indent: 2em;
+}
+
+.contact-details p {
+    font-family: 'K2D bold';
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.contact-details i {
+    color: white;
+    margin-right: 10px;
+    width: 15px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    display: none;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+    font-size: 1.25em;
+    font-family: 'Josefine Sans';
+    height: 50px;
+    resize: none;
+    margin-left: 30%;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form ::placeholder {
+    color: white;
+    opacity: 50%;
+}
+
+.send-button {
+    background-color: white;
+    color: black;
+    border: 1px solid #000;
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-left: 54%;
+}
+
+.send-button:hover {
+    background-color: yellow;
+    color: black
+}
+
+.main-footer {
+    padding: 20px;
+    font-family: 'Josefine Sans';
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.copyright {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links a:hover {
+    background-color: yellow;
+    color: black;
+}
+
